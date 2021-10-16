@@ -1,0 +1,19 @@
+-r requirements.txt
+
+# Dev tools
+pre-commit
+pip-tools
+pygrep
+snakeviz
+tox
+
+# Code quality
+isort
+mypy
+bandit
+
+# Tests
+parameterized
+coverage
+pytest
+pytest-cov

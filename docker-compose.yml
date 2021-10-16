@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  elastic:
+    image: elasticsearch:7.14.1
+    container_name: bert_elastic
+    ports:
+      - 9200:9200
+      - 9300:9300
+    expose:
+      - 9200
+    environment:
+      - discovery.type=single-node
+    volumes:
+    - ./elastic_data:/usr/share/elasticsearch/data
+
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bert_dev
+    command: sleep 100d
+    environment:
+      - PYTHONPATH=/app
+      - ELASTIC_CX_STRING=http://elastic:9200
+    volumes:
+      - .:/app
+    depends_on:
+      - elastic

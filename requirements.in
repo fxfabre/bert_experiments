@@ -1,0 +1,8 @@
+spacy==3.0.3
+pandas>=1.2.0
+transformers
+sentence_transformers
+torch==1.9.1
+elasticsearch[async]
+fuzzywuzzy
+python-Levenshtein
