@@ -6,3 +6,4 @@ torch==1.9.1
 elasticsearch[async]
 fuzzywuzzy
 python-Levenshtein
+IProgress

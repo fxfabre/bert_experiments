@@ -18,6 +18,9 @@ COPY ./requirements.txt /app/requirements.txt
 COPY ./requirements-dev.txt /app/requirements-dev.txt
 RUN pip install --disable-pip-version-check --no-cache-dir -r requirements-dev.txt
 
+RUN pip install jupyterlab spacy
+RUN python -m spacy download fr_core_news_md
+
 COPY src /app/src
 
 RUN echo 'alias l="ls -lA --color --group-directories-first"' >> ~/.bashrc
